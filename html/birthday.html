@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Happy 20th Birthday K. Devaki Nandini ❤️</title>
+
+
+    <!-- EXISTING CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+
+    <!-- GOOGLE FONT -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =================================================
+           IMPORTANT PAGE FIX
+           ================================================= */
+
+        html,
+        body {
+
+            width: 100%;
+
+            min-height: 100%;
+
+            height: auto !important;
+
+            margin: 0;
+
+            padding: 0;
+
+            overflow-x: hidden !important;
+
+            overflow-y: auto !important;
+
+        }
+
+
+        body.birthday-page {
+
+            min-height: 100vh !important;
+
+            height: auto !important;
+
+            overflow-x: hidden !important;
+
+            overflow-y: auto !important;
+
+        }
+
+
+        .birthday-content {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            height: auto !important;
+
+            overflow: visible !important;
+
+            padding-top: 50px;
+
+            padding-bottom: 100px;
+
+            box-sizing: border-box;
+
+        }
+
+
+        /* =================================================
+           BIRTHDAY CONTENT
+           ================================================= */
+
+        .birthday-top {
+
+            position: relative;
+
+            z-index: 5;
+
+        }
+
+
+        .birthday-title {
+
+            position: relative;
+
+            z-index: 5;
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+        }
+
+
+        .birthday-subtitle {
+
+            position: relative;
+
+            z-index: 5;
+
+        }
+
+
+        .birthday-cake {
+
+            position: relative;
+
+            z-index: 5;
+
+        }
+
+
+        .birthday-name {
+
+            position: relative;
+
+            z-index: 5;
+
+        }
+
+
+        /* =================================================
+           WISH CARD
+           ================================================= */
+
+        .wish-card {
+
+            position: relative;
+
+            z-index: 5;
+
+            width: min(90%, 800px);
+
+            margin: 35px auto;
+
+            box-sizing: border-box;
+
+            height: auto !important;
+
+            min-height: 0 !important;
+
+            overflow: visible !important;
+
+        }
+
+
+        .wish-card p {
+
+            overflow: visible !important;
+
+        }
+
+
+        .special-line {
+
+            height: auto !important;
+
+            min-height: 0 !important;
+
+            overflow: visible !important;
+
+            white-space: normal !important;
+
+            word-wrap: break-word;
+
+            overflow-wrap: anywhere;
+
+        }
+
+
+        /* =================================================
+           MEMORIES INTRO
+           ================================================= */
+
+        .memories-intro {
+
+            position: relative;
+
+            z-index: 20;
+
+            width: min(92%, 700px);
+
+            margin: 60px auto 30px;
+
+            padding: 30px 25px;
+
+            box-sizing: border-box;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,.78);
+
+            box-shadow:
+                0 15px 40px
+                rgba(100,30,60,.12);
+
+            text-align: center;
+
+            display: block;
+
+            visibility: visible;
+
+            opacity: 1;
+
+            height: auto !important;
+
+            min-height: 0 !important;
+
+            overflow: visible !important;
+
+        }
+
+
+        .memory-mini-icons {
+
+            font-size: 26px;
+
+            margin-bottom: 12px;
+
+            animation:
+                memoryMiniFloat
+                2s
+                infinite
+                ease-in-out;
+
+        }
+
+
+        .memories-intro h2 {
+
+            margin: 10px 0;
+
+            color: #9f2f57;
+
+            font-size: 30px;
+
+        }
+
+
+        .memories-intro p {
+
+            margin: 10px 0;
+
+            color: #704556;
+
+            line-height: 1.8;
+
+        }
+
+
+        .memories-intro strong {
+
+            color: #a52f58;
+
+        }
+
+
+        /* =================================================
+           GALLERY BUTTON
+           ================================================= */
+
+        .continue-btn {
+
+            position: relative;
+
+            z-index: 100;
+
+            display: block !important;
+
+            visibility: visible !important;
+
+            opacity: 1 !important;
+
+            margin: 25px auto 70px;
+
+            cursor: pointer;
+
+            pointer-events: auto !important;
+
+            height: auto !important;
+
+            min-height: 50px;
+
+        }
+
+
+        /* =================================================
+           FLOATING DECORATIONS
+           ================================================= */
+
+        .birthday-floating {
+
+            position: fixed;
+
+            font-size: 32px;
+
+            z-index: 1;
+
+            pointer-events: none;
+
+            animation:
+                birthdayFloat
+                6s
+                infinite
+                ease-in-out;
+
+        }
+
+
+        .birthday-f1 {
+            left: 5%;
+            top: 15%;
+        }
+
+        .birthday-f2 {
+            left: 12%;
+            top: 42%;
+        }
+
+        .birthday-f3 {
+            left: 20%;
+            bottom: 12%;
+        }
+
+        .birthday-f4 {
+            right: 7%;
+            top: 18%;
+        }
+
+        .birthday-f5 {
+            right: 15%;
+            top: 45%;
+        }
+
+        .birthday-f6 {
+            right: 5%;
+            bottom: 15%;
+        }
+
+        .birthday-f7 {
+            left: 3%;
+            bottom: 5%;
+        }
+
+        .birthday-f8 {
+            right: 28%;
+            top: 8%;
+        }
+
+
+        @keyframes birthdayFloat {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-22px)
+                    rotate(7deg);
+
+            }
+
+        }
+
+
+        /* =================================================
+           MEMORY INTRO ANIMATION
+           ================================================= */
+
+        @keyframes memoryMiniFloat {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-8px);
+
+            }
+
+        }
+
+
+        /* =================================================
+           MEMORY TRANSITION
+           ================================================= */
+
+        .memory-transition {
+
+            position: fixed;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #fffafd 0%,
+                    #ffe1ec 48%,
+                    #f3b0c8 100%
+                );
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            z-index: 99999;
+
+            transition:
+                opacity .6s ease,
+                visibility .6s ease;
+
+        }
+
+
+        .memory-transition.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+
+        .memory-transition-content {
+
+            width: min(90%, 600px);
+
+            text-align: center;
+
+            padding: 30px;
+
+            box-sizing: border-box;
+
+            opacity: 0;
+
+            transform:
+                scale(.65)
+                translateY(35px);
+
+            transition:
+                transform .8s ease,
+                opacity .8s ease;
+
+        }
+
+
+        .memory-transition.show
+        .memory-transition-content {
+
+            opacity: 1;
+
+            transform:
+                scale(1)
+                translateY(0);
+
+        }
+
+
+        .transition-symbols {
+
+            font-size: 25px;
+
+            letter-spacing: 4px;
+
+            animation:
+                transitionSymbols
+                2s
+                infinite
+                ease-in-out;
+
+        }
+
+
+        .transition-camera {
+
+            font-size:
+                clamp(75px, 18vw, 125px);
+
+            margin: 15px 0;
+
+            animation:
+                cameraAnimation
+                1.5s
+                infinite
+                ease-in-out;
+
+        }
+
+
+        .memory-transition h2 {
+
+            color: #862b4d;
+
+            font-size:
+                clamp(28px, 7vw, 45px);
+
+            margin: 15px 0;
+
+        }
+
+
+        .memory-transition p {
+
+            color: #704556;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+        }
+
+
+        .transition-quote {
+
+            display: inline-block;
+
+            margin-top: 18px;
+
+            padding: 12px 24px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,.8);
+
+            color: #a12f57;
+
+            font-weight: 600;
+
+        }
+
+
+        .transition-loading {
+
+            margin-top: 22px;
+
+            font-size: 25px;
+
+            letter-spacing: 8px;
+
+        }
+
+
+        .transition-loading span {
+
+            display: inline-block;
+
+            animation:
+                transitionDots
+                1.2s
+                infinite;
+
+        }
+
+
+        .transition-loading span:nth-child(2) {
+
+            animation-delay: .2s;
+
+        }
+
+
+        .transition-loading span:nth-child(3) {
+
+            animation-delay: .4s;
+
+        }
+
+
+        @keyframes cameraAnimation {
+
+            0%,
+            100% {
+
+                transform:
+                    scale(1)
+                    rotate(-3deg);
+
+            }
+
+            50% {
+
+                transform:
+                    scale(1.12)
+                    rotate(3deg);
+
+            }
+
+        }
+
+
+        @keyframes transitionSymbols {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+                opacity: .7;
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-12px);
+
+                opacity: 1;
+
+            }
+
+        }
+
+
+        @keyframes transitionDots {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+                opacity: .4;
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-8px);
+
+                opacity: 1;
+
+            }
+
+        }
+
+
+        /* =================================================
+           PAGE OUT
+           ================================================= */
+
+        body.pageOut {
+
+            overflow: hidden !important;
+
+        }
+
+
+        /* =================================================
+           MOBILE
+           ================================================= */
+
+        @media (max-width: 600px) {
+
+            .birthday-content {
+
+                padding-top: 35px;
+
+                padding-bottom: 80px;
+
+            }
+
+
+            .birthday-floating {
+
+                font-size: 25px;
+
+            }
+
+
+            .wish-card {
+
+                width: 92%;
+
+                margin-top: 30px;
+
+            }
+
+
+            .memories-intro {
+
+                width: 92%;
+
+                padding: 24px 18px;
+
+                margin-top: 45px;
+
+            }
+
+
+            .memories-intro h2 {
+
+                font-size: 25px;
+
+            }
+
+
+            .continue-btn {
+
+                width: 88%;
+
+                margin-bottom: 70px;
+
+            }
+
+
+            .transition-symbols {
+
+                font-size: 20px;
+
+                letter-spacing: 1px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="birthday-page">
+
+
+    <!-- =================================================
+         MUSIC
+         ================================================= -->
+
+    <audio
+        id="birthdayMusic"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="../music/birthday.mpeg"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+    <!-- =================================================
+         FLOATING DECORATIONS
+         ================================================= -->
+
+    <div class="birthday-floating birthday-f1">
+        ❤️
+    </div>
+
+    <div class="birthday-floating birthday-f2">
+        🌸
+    </div>
+
+    <div class="birthday-floating birthday-f3">
+        ✨
+    </div>
+
+    <div class="birthday-floating birthday-f4">
+        💖
+    </div>
+
+    <div class="birthday-floating birthday-f5">
+        🌷
+    </div>
+
+    <div class="birthday-floating birthday-f6">
+        💕
+    </div>
+
+    <div class="birthday-floating birthday-f7">
+        🎈
+    </div>
+
+    <div class="birthday-floating birthday-f8">
+        🌺
+    </div>
+
+
+    <!-- =================================================
+         CONFETTI
+         ================================================= -->
+
+    <div id="confetti"></div>
+
+
+    <!-- =================================================
+         MAIN CONTENT
+         ================================================= -->
+
+    <main class="birthday-content">
+
+
+        <!-- TOP -->
+
+        <div class="birthday-top">
+
+            🌸 A Very Special Day For You, Papa 🌸
+
+        </div>
+
+
+        <!-- TITLE -->
+
+        <h1 class="birthday-title">
+
+            Happy 20th Birthday,
+
+            <br>
+
+            K. Devaki Nandini! 🎂❤️
+
+        </h1>
+
+
+        <!-- DATE -->
+
+        <p class="birthday-subtitle">
+
+            August 13, 2026 ✨
+
+            <br><br>
+
+            Today is a beautiful day
+
+            <br>
+
+            because it is your birthday.
+
+            <br>
+
+            I'm truly happy to celebrate
+
+            <br>
+
+            this very special day with you. ❤️✨
+
+        </p>
+
+
+        <!-- CAKE -->
+
+        <div class="birthday-cake">
+
+            🎂
+
+        </div>
+
+
+        <!-- NAME -->
+
+        <div class="birthday-name">
+
+            K. Devaki Nandini
+
+            <span>
+
+                ❤️ "Papa" 💕
+
+            </span>
+
+        </div>
+
+
+        <!-- =================================================
+             MAIN MESSAGE
+             ================================================= -->
+
+        <div class="wish-card">
+
+
+            <h2>
+
+                🌸 Dear Papa 🌸
+
+            </h2>
+
+
+            <p>
+
+                Some people become a beautiful
+                part of our lives without even
+                realizing how special they are. ❤️
+
+            </p>
+
+
+            <p>
+
+                You are one of those people
+                who can make an ordinary moment
+                feel a little more beautiful. ✨
+
+            </p>
+
+
+            <p>
+
+                On your birthday, I just wish
+                that your life is always filled
+                with happiness, peaceful moments,
+                beautiful memories and countless
+                reasons to smile. 🌷
+
+            </p>
+
+
+            <p>
+
+                May every new year of your life
+                bring you new dreams,
+                new happiness and many wonderful
+                moments to remember. 💖
+
+            </p>
+
+
+            <!-- SPECIAL MESSAGE -->
+
+            <div class="special-line">
+
+                🌸 ఇలాంటి beautiful memories ఇంకా ఎన్నో మనం కలిసి create చేసుకోవాలి,
+                వాటిని life long గుర్తుండిపోయేలా celebrate చేసుకోవాలి. ❤️
+
+                <br><br>
+
+                ఏ situation వచ్చినా,
+                నేను ఎప్పుడూ నీకు support గా ఉంటాను.
+                నీకు అవసరమైనప్పుడు నీ పక్కనే ఉంటాను. 🤍
+
+                <br><br>
+
+                మన ప్రతి year ఇంకా ఎక్కువ smiles,
+                happiness, beautiful memories తో నిండిపోవాలి. ✨
+
+                <br><br>
+
+                ఎప్పుడూ happy గా ఉండు Papa.
+                నీ smile ఎప్పుడూ ఇలాగే ఉండాలి. ❤️
+
+                <br><br>
+
+                <strong>
+                    5201314, Papa. ♾️❤️
+                </strong>
+
+                <br><br>
+
+                You are my everything, Papa,
+                and one of the most beautiful parts
+                of my life. ❤️✨
+
+            </div>
+
+
+            <p>
+
+                This little surprise may be simple,
+
+                <br><br>
+
+                papa this surprise for u but every
+                part of it was made with a genuine
+                smile and many beautiful thoughts. 💕
+
+            </p>
+
+
+            <p>
+
+                I hope whenever you look back
+                at these moments,
+
+                <br>
+
+                they bring a smile to your face. 🌸
+
+            </p>
+
+
+            <p>
+
+                Keep smiling,
+
+                <br>
+
+                keep shining,
+
+                <br>
+
+                and keep being the wonderful
+                person you are, Papa. 🌷✨
+
+            </p>
+
+
+            <!-- FINAL WISH -->
+
+            <div class="final-wish">
+
+                Happy 20th Birthday, Papa! 🎂🎉❤️
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             MEMORIES INTRO
+             ================================================= -->
+
+        <div class="memories-intro">
+
+            <div class="memory-mini-icons">
+
+                🌸 ✨ 📸 ✨ 🌸
+
+            </div>
+
+
+            <h2>
+
+                And now...
+
+            </h2>
+
+
+            <p>
+
+                A little journey through
+
+                <strong>
+                    41 beautiful memories
+                </strong>
+
+                📸❤️
+
+            </p>
+
+
+            <p>
+
+                Every picture has a moment,
+
+                <br>
+
+                and every moment has a story. 🌷
+
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             GALLERY BUTTON
+             ================================================= -->
+
+        <button
+            id="memoryButton"
+            class="continue-btn"
+            type="button"
+        >
+
+            See Our 41 Memories 📸❤️
+
+        </button>
+
+
+    </main>
+
+
+    <!-- =================================================
+         TRANSITION SCREEN
+         ================================================= -->
+
+    <div
+        id="memoryTransition"
+        class="memory-transition"
+    >
+
+        <div class="memory-transition-content">
+
+
+            <div class="transition-symbols">
+
+                🌸 ❤️ ✨ 📸 ✨ ❤️ 🌸
+
+            </div>
+
+
+            <div class="transition-camera">
+
+                📸
+
+            </div>
+
+
+            <h2>
+
+                One More Little Surprise... ❤️
+
+            </h2>
+
+
+            <p>
+
+                41 beautiful memories
+
+                <br>
+
+                are waiting for you...
+
+            </p>
+
+
+            <div class="transition-quote">
+
+                Every picture has a story. 🌷
+
+            </div>
+
+
+            <div class="transition-loading">
+
+                <span>❤️</span>
+
+                <span>✨</span>
+
+                <span>🌸</span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         JAVASCRIPT
+         ================================================= -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                /* =================================================
+                   MUSIC
+                   ================================================= */
+
+                const music =
+                    document.getElementById(
+                        "birthdayMusic"
+                    );
+
+
+                const savedMusicTime =
+                    sessionStorage.getItem(
+                        "birthdayMusicTime"
+                    );
+
+
+                if (music) {
+
+                    music.addEventListener(
+                        "loadedmetadata",
+                        function () {
+
+                            if (savedMusicTime) {
+
+                                const time =
+                                    parseFloat(
+                                        savedMusicTime
+                                    );
+
+
+                                if (
+                                    !isNaN(time) &&
+                                    time >= 0 &&
+                                    time < music.duration
+                                ) {
+
+                                    music.currentTime =
+                                        time;
+
+                                }
+
+                            }
+
+
+                            music.play().catch(
+                                function () {
+
+                                    console.log(
+                                        "Music requires user interaction."
+                                    );
+
+                                }
+                            );
+
+                        }
+                    );
+
+
+                    /* SAVE MUSIC */
+
+                    setInterval(
+                        function () {
+
+                            if (
+                                music &&
+                                !music.paused
+                            ) {
+
+                                sessionStorage.setItem(
+                                    "birthdayMusicTime",
+                                    music.currentTime
+                                );
+
+                            }
+
+                        },
+                        300
+                    );
+
+
+                    /* START MUSIC AFTER CLICK */
+
+                    document.addEventListener(
+                        "click",
+                        function () {
+
+                            if (
+                                music &&
+                                music.paused
+                            ) {
+
+                                music.play().catch(
+                                    function () {}
+                                );
+
+                            }
+
+                        },
+                        {
+                            once: true
+                        }
+                    );
+
+                }
+
+
+                /* =================================================
+                   CONFETTI
+                   ================================================= */
+
+                const confettiContainer =
+                    document.getElementById(
+                        "confetti"
+                    );
+
+
+                const symbols = [
+
+                    "❤️",
+                    "💖",
+                    "💕",
+                    "✨",
+                    "🌸",
+                    "🌷",
+                    "🎉",
+                    "🎈",
+                    "💫"
+
+                ];
+
+
+                if (confettiContainer) {
+
+                    for (
+                        let i = 0;
+                        i < 55;
+                        i++
+                    ) {
+
+                        const piece =
+                            document.createElement(
+                                "span"
+                            );
+
+
+                        piece.className =
+                            "confetti-piece";
+
+
+                        piece.textContent =
+                            symbols[
+                                Math.floor(
+                                    Math.random() *
+                                    symbols.length
+                                )
+                            ];
+
+
+                        piece.style.left =
+                            Math.random() * 100 + "%";
+
+
+                        piece.style.animationDelay =
+                            Math.random() * 5 + "s";
+
+
+                        piece.style.animationDuration =
+                            (
+                                3 +
+                                Math.random() * 4
+                            ) + "s";
+
+
+                        confettiContainer.appendChild(
+                            piece
+                        );
+
+                    }
+
+                }
+
+
+                /* =================================================
+                   GALLERY BUTTON
+                   ================================================= */
+
+                const memoryButton =
+                    document.getElementById(
+                        "memoryButton"
+                    );
+
+
+                const memoryTransition =
+                    document.getElementById(
+                        "memoryTransition"
+                    );
+
+
+                if (
+                    memoryButton &&
+                    memoryTransition
+                ) {
+
+                    memoryButton.addEventListener(
+                        "click",
+                        function () {
+
+
+                            /* Prevent double click */
+
+                            if (
+                                memoryButton.disabled
+                            ) {
+
+                                return;
+
+                            }
+
+
+                            memoryButton.disabled =
+                                true;
+
+
+                            memoryButton.style.pointerEvents =
+                                "none";
+
+
+                            /* Save music */
+
+                            if (music) {
+
+                                sessionStorage.setItem(
+                                    "birthdayMusicTime",
+                                    music.currentTime
+                                );
+
+                            }
+
+
+                            /* Show transition */
+
+                            memoryTransition.classList.add(
+                                "show"
+                            );
+
+
+                            /*
+                             * Go to gallery.
+                             *
+                             * gallery.html must be in
+                             * the SAME folder as birthday.html
+                             */
+
+                            setTimeout(
+                                function () {
+
+                                    window.location.assign(
+                                        "./gallery.html"
+                                    );
+
+                                },
+                                2500
+                            );
+
+                        }
+                    );
+
+                }
+
+            }
+
+        );
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Wish U Many More Happy Birthday K. Devaki Nandini (Papa) ❤️
+    </title>
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+
+    <!-- Font -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body class="intro-page">
+
+
+    <!-- =========================================
+         BACKGROUND DECORATIONS
+    ========================================== -->
+
+    <div class="background-animation">
+
+        <div class="circle c1"></div>
+
+        <div class="circle c2"></div>
+
+        <div class="circle c3"></div>
+
+    </div>
+
+
+    <!-- =========================================
+         FLOATING DECORATIONS
+    ========================================== -->
+
+    <div class="intro-decoration d1">❤️</div>
+    <div class="intro-decoration d2">🌸</div>
+    <div class="intro-decoration d3">✨</div>
+    <div class="intro-decoration d4">💖</div>
+    <div class="intro-decoration d5">🌷</div>
+    <div class="intro-decoration d6">💕</div>
+    <div class="intro-decoration d7">🎈</div>
+    <div class="intro-decoration d8">⭐</div>
+
+
+    <!-- =========================================
+         BACKGROUND MUSIC
+    ========================================== -->
+
+    <audio
+        id="birthdayMusic"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="../music/birthday.mpeg"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+    <!-- =========================================
+         MAIN CARD
+    ========================================== -->
+
+    <main class="container">
+
+
+        <!-- Gift -->
+
+        <div class="gift">
+            🎁
+        </div>
+
+
+        <!-- Small title -->
+
+        <div class="small-title">
+
+            ✨ A Little Surprise For You, Papa ✨
+
+        </div>
+
+
+        <!-- Main title -->
+
+        <h1 class="main-title">    
+            Happy  Birthday
+
+       ✨ K. Devaki Nandini ❤️
+            <br>
+            (Papa) 🎂✨
+
+        </h1>
+
+
+        <!-- Birthday information -->
+
+        <p class="subtitle">
+
+            August 13, 2026 ✨
+
+            <br><br>
+
+            Today is not just another day...
+
+            <br>
+
+            <strong>
+                Today is a very special day to me,
+                because it's the day someone truly
+                special was born. 🌸✨
+            </strong>
+
+            <br><br>
+
+            It is a beautiful birthday
+            to celebrate with you, Papa. 💖
+
+        </p>
+
+
+        <!-- Name -->
+
+        <div class="special-name">
+
+            K. Devaki Nandini 💕
+
+            <span>
+
+                ❤️ "Papa" 💕
+
+            </span>
+
+        </div>
+
+
+        <!-- Message -->
+
+        <p class="little-message">
+
+            Some people make life brighter
+            just by being in it. 🌸
+
+            <br><br>
+
+            You are one of the most important
+            and special people in my life, Papa. ❤️
+
+        </p>
+
+
+        <!-- =====================================
+             START BUTTON
+        ====================================== -->
+
+        <button
+            id="startSurprise"
+            type="button"
+        >
+
+            Open Your Surprise 🎁
+
+        </button>
+
+
+    </main>
+
+
+    <!-- =========================================
+         SURPRISE TRANSITION
+    ========================================== -->
+
+    <div
+        id="surpriseTransition"
+        class="surprise-transition"
+    >
+
+        <div class="transition-content">
+
+
+            <!-- Gift -->
+
+            <div class="transition-gift">
+
+                🎁
+
+            </div>
+
+
+            <!-- Main message -->
+
+            <h2>
+
+                Wait Papa... ❤️
+
+            </h2>
+
+
+            <p>
+
+                Your little surprise
+                is getting ready... ✨
+
+            </p>
+
+
+            <!-- Floating symbols -->
+
+            <div class="transition-hearts">
+
+                ❤️ 💖 ✨ 🌸 💕 🌷
+
+            </div>
+
+
+            <!-- Loading dots -->
+
+            <div class="loading-dots">
+
+                <span>.</span>
+                <span>.</span>
+                <span>.</span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+
+        /* =========================================
+           FLOATING DECORATION ANIMATION
+        ========================================== */
+
+        const decorations =
+            document.querySelectorAll(
+                ".intro-decoration"
+            );
+
+
+        decorations.forEach(
+            function(item, index) {
+
+                item.style.animationDelay =
+                    (index * 0.5) + "s";
+
+            }
+        );
+
+
+
+        /* =========================================
+           ELEMENTS
+        ========================================== */
+
+        const music =
+            document.getElementById(
+                "birthdayMusic"
+            );
+
+
+        const startButton =
+            document.getElementById(
+                "startSurprise"
+            );
+
+
+        const surpriseTransition =
+            document.getElementById(
+                "surpriseTransition"
+            );
+
+
+
+        /* =========================================
+           NEW SURPRISE
+           
+           Start music from beginning.
+        ========================================== */
+
+        sessionStorage.removeItem(
+            "birthdayMusicTime"
+        );
+
+
+
+        /* =========================================
+           MUSIC SAVE TIMER
+        ========================================== */
+
+        let musicSaveTimer = null;
+
+
+
+        function startSavingMusic() {
+
+
+            if (musicSaveTimer) {
+
+                clearInterval(
+                    musicSaveTimer
+                );
+
+            }
+
+
+            musicSaveTimer =
+                setInterval(
+                    function() {
+
+                        if (
+                            music &&
+                            !music.paused
+                        ) {
+
+                            sessionStorage.setItem(
+                                "birthdayMusicTime",
+                                music.currentTime
+                            );
+
+                        }
+
+                    },
+                    300
+                );
+
+        }
+
+
+
+        /* =========================================
+           START SURPRISE
+        ========================================== */
+
+        startButton.addEventListener(
+            "click",
+            async function() {
+
+
+                /*
+                 * Prevent double click
+                 */
+
+                startButton.disabled =
+                    true;
+
+
+                /*
+                 * Show surprise animation
+                 */
+
+                surpriseTransition.classList.add(
+                    "show"
+                );
+
+
+                /*
+                 * Start music from beginning
+                 */
+
+                try {
+
+                    music.currentTime = 0;
+
+                    await music.play();
+
+                    startSavingMusic();
+
+                }
+
+                catch (error) {
+
+                    console.log(
+                        "Music waiting for browser permission."
+                    );
+
+                }
+
+
+                /*
+                 * Wait for animation
+                 * and then open Catch Me page.
+                 */
+
+                setTimeout(
+                    function() {
+
+                        /*
+                         * Save current music position
+                         */
+
+                        if (music) {
+
+                            sessionStorage.setItem(
+                                "birthdayMusicTime",
+                                music.currentTime
+                            );
+
+                        }
+
+
+                        /*
+                         * Small fade transition
+                         */
+
+                        document.body.classList.add(
+                            "pageOut"
+                        );
+
+
+                        /*
+                         * Open Catch page
+                         */
+
+                        setTimeout(
+                            function() {
+
+                                window.location.href =
+                                    "catch.html";
+
+                            },
+                            500
+                        );
+
+
+                    },
+                    2200
+                );
+
+            }
+        );
+
+
+
+        /* =========================================
+           SAVE MUSIC BEFORE LEAVING
+        ========================================== */
+
+        window.addEventListener(
+            "beforeunload",
+            function() {
+
+                if (music) {
+
+                    sessionStorage.setItem(
+                        "birthdayMusicTime",
+                        music.currentTime
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+    <!-- =========================================
+         SURPRISE TRANSITION CSS
+         
+         This is kept here so you don't have
+         to search through style.css.
+    ========================================== -->
+
+    <style>
+
+
+        .surprise-transition {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #fff7fa 0%,
+                    #ffdce8 45%,
+                    #f3adc5 100%
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            z-index: 99999;
+
+            transition:
+                opacity .5s ease,
+                visibility .5s ease;
+
+        }
+
+
+        .surprise-transition.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+
+        .transition-content {
+
+            text-align: center;
+
+            padding: 25px;
+
+            transform:
+                scale(.65)
+                translateY(20px);
+
+            opacity: 0;
+
+            transition:
+                transform .7s ease,
+                opacity .7s ease;
+
+        }
+
+
+        .surprise-transition.show
+        .transition-content {
+
+            transform:
+                scale(1)
+                translateY(0);
+
+            opacity: 1;
+
+        }
+
+
+        .transition-gift {
+
+            font-size:
+                clamp(75px, 18vw, 120px);
+
+            animation:
+                transitionGiftBounce
+                1s
+                infinite
+                ease-in-out;
+
+        }
+
+
+        .transition-content h2 {
+
+            margin-top: 15px;
+
+            color: #862b4d;
+
+            font-size:
+                clamp(30px, 7vw, 48px);
+
+        }
+
+
+        .transition-content p {
+
+            margin-top: 12px;
+
+            color: #704556;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+        }
+
+
+        .transition-hearts {
+
+            margin-top: 25px;
+
+            font-size: 28px;
+
+            letter-spacing: 5px;
+
+            animation:
+                transitionHearts
+                2s
+                infinite
+                ease-in-out;
+
+        }
+
+
+        .loading-dots {
+
+            margin-top: 15px;
+
+            color: #a52f58;
+
+            font-size: 32px;
+
+            font-weight: 800;
+
+            letter-spacing: 5px;
+
+        }
+
+
+        .loading-dots span {
+
+            display: inline-block;
+
+            animation:
+                dotAnimation
+                1.2s
+                infinite;
+
+        }
+
+
+        .loading-dots span:nth-child(2) {
+
+            animation-delay:
+                .2s;
+
+        }
+
+
+        .loading-dots span:nth-child(3) {
+
+            animation-delay:
+                .4s;
+
+        }
+
+
+        @keyframes transitionGiftBounce {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg)
+                    scale(1);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-18px)
+                    rotate(5deg)
+                    scale(1.08);
+
+            }
+
+        }
+
+
+        @keyframes transitionHearts {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+                opacity: .7;
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-12px);
+
+                opacity: 1;
+
+            }
+
+        }
+
+
+        @keyframes dotAnimation {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+                opacity: .3;
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-8px);
+
+                opacity: 1;
+
+            }
+
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+
+            .transition-content {
+
+                width: 90%;
+
+            }
+
+
+            .transition-hearts {
+
+                font-size: 23px;
+
+                letter-spacing: 2px;
+
+            }
+
+        }
+
+    </style>
+
+
+</body>
+
+</html>

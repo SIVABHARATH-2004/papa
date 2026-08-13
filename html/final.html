@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>For Papa ❤️</title>
+
+    <!-- EXISTING CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <!-- FONTS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================================
+           LAST SURPRISE SECTION
+        ========================================== */
+
+        .last-surprise {
+
+            width: min(92%, 750px);
+
+            margin: 70px auto 50px;
+
+            padding: 55px 30px;
+
+            text-align: center;
+
+            border-radius: 35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,.96),
+                    rgba(255,230,242,.94)
+                );
+
+            box-shadow:
+                0 25px 70px rgba(150,40,90,.20),
+                inset 0 0 30px rgba(255,255,255,.8);
+
+            position: relative;
+
+            overflow: hidden;
+
+            opacity: 0;
+
+            transform:
+                translateY(50px)
+                scale(.95);
+
+            animation:
+                surpriseAppear 1.2s ease forwards;
+
+            animation-delay: 1s;
+        }
+
+
+        /* =========================================
+           ICON
+        ========================================== */
+
+        .surprise-icon {
+
+            font-size: 75px;
+
+            margin-bottom: 20px;
+
+            animation:
+                giftFloat 2s ease-in-out infinite;
+        }
+
+
+        /* =========================================
+           TITLE
+        ========================================== */
+
+        .last-surprise h2 {
+
+            margin: 0 0 18px;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size:
+                clamp(28px, 6vw, 48px);
+
+            font-weight: 800;
+
+            line-height: 1.2;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #a5285d,
+                    #f04e8a,
+                    #ff8db5,
+                    #a5285d
+                );
+
+            background-size: 300% auto;
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+            animation:
+                surpriseText 4s linear infinite;
+        }
+
+
+        /* =========================================
+           PARAGRAPHS
+        ========================================== */
+
+        .last-surprise p {
+
+            margin: 12px auto;
+
+            max-width: 600px;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            color: #75455b;
+        }
+
+
+        /* =========================================
+           BUTTON
+        ========================================== */
+
+        .cake-surprise-button {
+
+            margin-top: 28px;
+
+            padding:
+                16px 30px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #c92f69,
+                    #f05b91
+                );
+
+            color: white;
+
+            font-family:
+                "Poppins",
+                sans-serif;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 30px
+                rgba(190,40,100,.35);
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
+
+
+        .cake-surprise-button:hover {
+
+            transform:
+                translateY(-5px)
+                scale(1.04);
+
+            box-shadow:
+                0 15px 40px
+                rgba(190,40,100,.50);
+        }
+
+
+        .cake-surprise-button:active {
+
+            transform:
+                scale(.95);
+        }
+
+
+        /* =========================================
+           DECORATIONS
+        ========================================== */
+
+        .surprise-decoration {
+
+            position: absolute;
+
+            font-size: 30px;
+
+            pointer-events: none;
+
+            animation:
+                decorationFloat 4s ease-in-out infinite;
+        }
+
+
+        .surprise-decoration.one {
+
+            top: 25px;
+
+            left: 7%;
+        }
+
+
+        .surprise-decoration.two {
+
+            top: 40px;
+
+            right: 7%;
+
+            animation-delay: .6s;
+        }
+
+
+        .surprise-decoration.three {
+
+            bottom: 25px;
+
+            left: 10%;
+
+            animation-delay: 1s;
+        }
+
+
+        .surprise-decoration.four {
+
+            bottom: 25px;
+
+            right: 10%;
+
+            animation-delay: 1.5s;
+        }
+
+
+        /* =========================================
+           ANIMATIONS
+        ========================================== */
+
+        @keyframes surpriseAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(50px)
+                    scale(.95);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        @keyframes giftFloat {
+
+            0%,100% {
+
+                transform:
+                    translateY(0)
+                    rotate(-4deg);
+            }
+
+            50% {
+
+                transform:
+                    translateY(-12px)
+                    rotate(4deg);
+            }
+        }
+
+
+        @keyframes surpriseText {
+
+            0% {
+
+                background-position:
+                    0% center;
+            }
+
+            100% {
+
+                background-position:
+                    300% center;
+            }
+        }
+
+
+        @keyframes decorationFloat {
+
+            0%,100% {
+
+                transform:
+                    translateY(0)
+                    rotate(-5deg);
+            }
+
+            50% {
+
+                transform:
+                    translateY(-15px)
+                    rotate(5deg);
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width:600px) {
+
+            .last-surprise {
+
+                margin-top: 50px;
+
+                padding:
+                    45px 18px;
+            }
+
+
+            .surprise-icon {
+
+                font-size: 60px;
+            }
+
+
+            .last-surprise p {
+
+                font-size: 15px;
+            }
+
+
+            .cake-surprise-button {
+
+                width: 100%;
+
+                max-width: 330px;
+
+                padding:
+                    15px 18px;
+
+                font-size: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="final-page">
+
+
+    <!-- =========================================
+         BACKGROUND DECORATIONS
+    ========================================== -->
+
+    <div class="final-decorations">
+
+        <span>🌸</span>
+        <span>❤️</span>
+        <span>✨</span>
+        <span>🌷</span>
+        <span>💖</span>
+        <span>🌺</span>
+        <span>🎈</span>
+        <span>💐</span>
+        <span>💕</span>
+        <span>⭐</span>
+        <span>🌸</span>
+        <span>💗</span>
+
+    </div>
+
+
+    <!-- =========================================
+         BACKGROUND HEARTS
+    ========================================== -->
+
+    <div class="final-floating-hearts">
+
+        <span>❤️</span>
+        <span>💕</span>
+        <span>💖</span>
+        <span>❤️</span>
+        <span>💕</span>
+        <span>✨</span>
+
+    </div>
+
+
+    <!-- =========================================
+         MUSIC
+    ========================================== -->
+
+    <audio
+        id="birthdayMusic"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="../music/birthday.mpeg"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="final-content">
+
+
+        <!-- =====================================
+             GIFT
+        ====================================== -->
+
+        <div class="final-gift">
+
+            🎁
+
+        </div>
+
+
+        <!-- =====================================
+             SMALL TITLE
+        ====================================== -->
+
+        <div class="final-small">
+
+            🌸 Papa... This One Is For You 🌸
+
+        </div>
+
+
+        <!-- =====================================
+             MAIN TITLE
+        ====================================== -->
+
+        <h1>
+
+            This Little Surprise
+            <br>
+
+            Was Made Just For You,
+            <span>NANDU</span> ❤️
+
+        </h1>
+
+
+        <!-- =====================================
+             INTRO
+        ====================================== -->
+
+        <p class="final-intro">
+
+            From the first photo
+            to the last memory...
+
+            <br>
+
+            every little moment
+            has a special feeling behind it. 🌸✨
+
+        </p>
+
+
+        <!-- =====================================
+             MAIN CARD
+        ====================================== -->
+
+        <div class="final-card">
+
+
+            <!-- FLOWERS -->
+
+            <div class="final-flowers">
+
+                🌸 🌷 🌺 🌼 💐
+
+            </div>
+
+
+            <!-- NAME -->
+
+            <h2>
+
+                K. Devaki Nandini ❤️
+
+            </h2>
+
+
+            <!-- NICKNAME -->
+
+            <h3>
+
+                My Special Papa 🌷
+
+            </h3>
+
+
+            <!-- WISH 1 -->
+
+            <p>
+
+                నీ జీవితంలో ప్రతి రోజు
+                ఒక అందమైన జ్ఞాపకంగా మారాలి. ❤️
+
+            </p>
+
+
+            <!-- WISH 2 -->
+
+            <p>
+
+                నీ ముఖంలో చిరునవ్వు,
+                నీ మనసులో ఆనందం,
+                నీ జీవితంలో విజయాలు
+                ఎప్పటికీ తగ్గకూడదు. ✨
+
+            </p>
+
+
+            <!-- WISH 3 -->
+
+            <p>
+
+                ఈ చిన్న surprise
+                నీకు ఒక మంచి జ్ఞాపకంగా
+                ఎప్పటికీ గుర్తుండిపోవాలి. 🌸
+
+            </p>
+
+
+            <!-- =================================
+                 PERSONAL MESSAGE
+            ================================== -->
+
+            <div class="personal-final-message">
+
+                <div class="message-title">
+
+                    🌸 A Little Message From My Heart 🌸
+
+                </div>
+
+
+                <p>
+
+                    <strong>Papa... ❤️</strong>
+
+                    <br><br>
+
+                    ఇలాంటి beautiful memories
+                    ఇంకా ఎన్నో మనం కలిసి
+                    create చేసుకోవాలి. 🌸
+
+                    <br><br>
+
+                    మనం కలిసి గడిపిన
+                    ప్రతి చిన్న moment,
+                    ప్రతి smile,
+                    ప్రతి memory
+                    నాకు చాలా special. ❤️
+
+                    <br><br>
+
+                    ఈ memories ఇక్కడితో
+                    ఆగిపోకూడదు...
+
+                    <br>
+
+                    ఇంకా ఎన్నో beautiful moments
+                    కలిసి create చేసుకుంటూ,
+                    life long గుర్తుండిపోయేలా
+                    వాటిని celebrate చేసుకోవాలి. ✨
+
+                    <br><br>
+
+                    ఏ situation వచ్చినా,
+                    నేను ఎప్పుడూ నీకు
+                    support గా ఉంటాను.
+
+                    <br>
+
+                    నీకు అవసరమైనప్పుడు
+                    నీ పక్కనే ఉండాలని
+                    ఎప్పుడూ కోరుకుంటాను. ❤️
+
+                    <br><br>
+
+                    ప్రతి year
+                    మనకి ఇంకా ఎక్కువ smiles,
+                    happiness,
+                    beautiful memories
+                    తీసుకురావాలి. 🌷
+
+                    <br><br>
+
+                    ఎప్పుడూ happy గా ఉండు Papa...
+
+                    <br>
+
+                    నీ smile ఎప్పుడూ
+                    ఇలాగే ఉండాలి. ❤️✨
+
+                    <br><br>
+
+                    <strong class="everything-line">
+
+                        You are my everything, Papa,
+                        and a beautiful part
+                        of my life. 🌸❤️
+
+                    </strong>
+
+                    <br><br>
+
+                    మన memories అన్నీ
+                    ఎప్పటికీ గుర్తుండిపోయేలా
+                    ఇంకా ఎన్నో beautiful moments
+                    కలిసి create చేసుకోవాలి. ♾️
+
+                    <br><br>
+
+                    <strong class="special-number">
+
+                        5201314, Papa. ❤️♾️
+
+                    </strong>
+
+                </p>
+
+            </div>
+
+
+            <!-- =================================
+                 BIRTHDAY
+            ================================== -->
+
+            <div class="final-birthday">
+
+                🎂 Happy 20th Birthday, Papa! 🎉❤️
+
+            </div>
+
+
+            <!-- DATE -->
+
+            <div class="birthday-date">
+
+                13 • 08 • 2026 🎂✨
+
+            </div>
+
+
+            <!-- SYMBOLS -->
+
+            <div class="final-symbols">
+
+                🌸 ❤️ 🌷 💖 🌺 ✨ 🌼 💕
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =====================================
+             BEST WISHES
+        ====================================== -->
+
+        <div class="best-wishes">
+
+            🌸 Best Wishes Always 🌸
+
+            <span>
+
+                నీ ప్రతి రోజు
+                ఆనందంగా,
+                ప్రశాంతంగా,
+                beautiful memories తో
+                నిండిపోవాలని
+                మనస్ఫూర్తిగా కోరుకుంటున్నాను. ❤️
+
+            </span>
+
+        </div>
+
+
+        <!-- =====================================
+             FINAL ENDING
+        ====================================== -->
+
+        <p class="final-ending">
+
+            Keep smiling,
+            keep shining,
+            and keep creating
+            beautiful memories. ✨
+
+            <br><br>
+
+            May this birthday bring you
+            many beautiful moments
+            and countless reasons to smile. 🌸❤️
+
+        </p>
+
+
+        <!-- =====================================
+             FOREVER MESSAGE
+        ====================================== -->
+
+        <div class="forever-final">
+
+            🌸 Some memories stay forever... ❤️
+
+            <br><br>
+
+            And this little surprise
+            is one of those memories. ✨
+
+            <br><br>
+
+            <span>
+
+                Forever Special • Forever Remembered ♾️❤️
+
+            </span>
+
+        </div>
+
+
+        <!-- =====================================
+             SIGNATURE
+        ====================================== -->
+
+        <div class="final-signature">
+
+            Once Again Wish u many more happy returns of the Day ❤️
+
+            <br>
+
+            🌸 ✨ K.DEVAKI NANDINI ❤️ ✨ PAPA 🌸
+
+            <br>
+
+            <strong>
+
+                V.Sivabharath ✨
+
+            </strong>
+
+        </div>
+
+
+        <!-- =====================================
+             LAST SYMBOLS
+        ====================================== -->
+
+        <div class="last-symbols">
+
+            🌸 ✨ ❤️ ✨ 🌸
+
+        </div>
+
+
+        <!-- =================================================
+             🎁 LAST SURPRISE
+             BUTTON → cutting.html
+        ================================================== -->
+
+        <section class="last-surprise">
+
+
+            <!-- DECORATIONS -->
+
+            <div class="surprise-decoration one">
+
+                🎈
+
+            </div>
+
+
+            <div class="surprise-decoration two">
+
+                ❤️
+
+            </div>
+
+
+            <div class="surprise-decoration three">
+
+                🌸
+
+            </div>
+
+
+            <div class="surprise-decoration four">
+
+                🎂
+
+            </div>
+
+
+            <!-- GIFT -->
+
+            <div class="surprise-icon">
+
+                🎁
+
+            </div>
+
+
+            <!-- TITLE -->
+
+            <h2>
+
+                One Last Surprise For You ❤️
+
+            </h2>
+
+
+            <!-- MESSAGE -->
+
+            <p>
+
+                Papa... the birthday celebration
+                isn't complete yet! ✨
+
+            </p>
+
+
+            <p>
+
+                Something very special is waiting
+                for you... 🎂🎈💖
+
+            </p>
+
+
+            <!-- =========================================
+                 IMPORTANT BUTTON
+                 THIS OPENS cutting.html
+            ========================================== -->
+
+            <button
+                class="cake-surprise-button"
+                type="button"
+                onclick="window.location.href='cutting.html'"
+            >
+
+                🎂 Open Your Special Surprise 🎁
+
+            </button>
+
+
+        </section>
+
+
+        <!-- =====================================
+             REPLAY
+        ====================================== -->
+
+        <button
+            class="replay-button"
+            type="button"
+            onclick="window.location.href='index.html'"
+        >
+
+            See It Again ❤️
+
+        </button>
+
+
+    </main>
+
+
+    <!-- =========================================
+         EXISTING JAVASCRIPT
+    ========================================== -->
+
+    <script src="../js/script.js"></script>
+
+
+    <script>
+
+        /*
+         * Continue birthday music
+         */
+
+        if (
+            typeof restoreMusic === "function"
+        ) {
+
+            restoreMusic();
+
+        }
+
+
+        /*
+         * Final page loaded
+         */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                document.body.classList.add(
+                    "final-loaded"
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

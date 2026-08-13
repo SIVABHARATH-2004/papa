@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Catch Me Papa! 🧸</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body class="catch-page">
+
+
+    <!-- =========================================
+         MUSIC
+    ========================================== -->
+
+    <audio
+        id="birthdayMusic"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="../music/birthday.mpeg"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+
+    <!-- =========================================
+         BACKGROUND
+    ========================================== -->
+
+    <div class="catch-background">
+
+        <div class="floating-heart heart1">❤️</div>
+        <div class="floating-heart heart2">💖</div>
+
+        <div class="floating-star star1">✨</div>
+        <div class="floating-star star2">⭐</div>
+
+        <div class="floating-flower flower1">🌸</div>
+        <div class="floating-flower flower2">🌷</div>
+        <div class="floating-flower flower3">🌺</div>
+
+        <div class="floating-balloon balloon1">🎈</div>
+        <div class="floating-balloon balloon2">🎈</div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="catch-header">
+
+        <div class="catch-small">
+            One Little Game For You ❤️
+        </div>
+
+
+        <h1>
+            Catch Me, Papa! 🧸
+        </h1>
+
+
+        <p id="catchMessage">
+
+            Come on Papa...
+            catch the teddy! 😄
+
+        </p>
+
+
+        <div class="counter">
+
+            Catches:
+            <span id="catchCount">0</span>
+            / 8
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         TEDDY
+    ========================================== -->
+
+    <button
+        id="teddy"
+        class="teddy"
+        aria-label="Catch the teddy"
+    >
+
+        🧸
+
+    </button>
+
+
+
+    <!-- =========================================
+         TAP MESSAGE
+    ========================================== -->
+
+    <div
+        id="tapMessage"
+        class="tap-message"
+    ></div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+
+        /* =========================================
+           ELEMENTS
+        ========================================== */
+
+        const teddy =
+            document.getElementById("teddy");
+
+        const catchCount =
+            document.getElementById("catchCount");
+
+        const catchMessage =
+            document.getElementById("catchMessage");
+
+        const tapMessage =
+            document.getElementById("tapMessage");
+
+        const music =
+            document.getElementById("birthdayMusic");
+
+
+
+        /* =========================================
+           SETTINGS
+        ========================================== */
+
+        const REQUIRED_CATCHES = 8;
+
+
+
+        /* =========================================
+           VARIABLES
+        ========================================== */
+
+        let catches = 0;
+
+        let gameFinished = false;
+
+
+
+        /* =========================================
+           MESSAGES
+        ========================================== */
+
+        const messages = [
+
+            "Oops! Too slow! 😜",
+
+            "Almost got me Papa! 😂",
+
+            "Hehe... try again! 🧸",
+
+            "You're getting closer! 💕",
+
+            "Nice try Papa! ✨",
+
+            "You are almost there! 😄",
+
+            "Just one more... maybe! 🧸",
+
+            "Okay okay... you got me! ❤️"
+
+        ];
+
+
+
+        /* =========================================
+           MUSIC RESTORE
+        ========================================== */
+
+        const savedTime =
+            sessionStorage.getItem(
+                "birthdayMusicTime"
+            );
+
+
+        music.addEventListener(
+            "loadedmetadata",
+            function () {
+
+                if (savedTime) {
+
+                    const time =
+                        parseFloat(savedTime);
+
+
+                    if (
+                        !isNaN(time) &&
+                        time >= 0 &&
+                        time < music.duration
+                    ) {
+
+                        music.currentTime =
+                            time;
+
+                    }
+
+                }
+
+
+                music.play().catch(
+                    function () {
+
+                        console.log(
+                            "Music waiting for interaction."
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* =========================================
+           SAVE MUSIC POSITION
+        ========================================== */
+
+        setInterval(
+            function () {
+
+                if (
+                    music &&
+                    !music.paused
+                ) {
+
+                    sessionStorage.setItem(
+                        "birthdayMusicTime",
+                        music.currentTime
+                    );
+
+                }
+
+            },
+            300
+        );
+
+
+
+        /* =========================================
+           START MUSIC AFTER USER TOUCH
+        ========================================== */
+
+        document.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    music &&
+                    music.paused
+                ) {
+
+                    music.play().catch(
+                        function () {}
+                    );
+
+                }
+
+            },
+            {
+                once: true
+            }
+        );
+
+
+
+        /* =========================================
+           MOVE TEDDY
+        ========================================== */
+
+        function moveTeddy() {
+
+
+            if (gameFinished) {
+
+                return;
+
+            }
+
+
+            const teddyWidth =
+                teddy.offsetWidth;
+
+            const teddyHeight =
+                teddy.offsetHeight;
+
+
+            const maxX =
+                window.innerWidth -
+                teddyWidth -
+                20;
+
+
+            const maxY =
+                window.innerHeight -
+                teddyHeight -
+                30;
+
+
+            const minY = 180;
+
+
+            const x =
+                Math.random() *
+                Math.max(maxX, 20);
+
+
+            const y =
+                minY +
+                Math.random() *
+                Math.max(
+                    maxY - minY,
+                    20
+                );
+
+
+            teddy.style.left =
+                x + "px";
+
+
+            teddy.style.top =
+                y + "px";
+
+        }
+
+
+
+        /* =========================================
+           SHOW TAP MESSAGE
+        ========================================== */
+
+        function showMessage(text) {
+
+
+            tapMessage.textContent =
+                text;
+
+
+            tapMessage.classList.add(
+                "show"
+            );
+
+
+            setTimeout(
+                function () {
+
+                    tapMessage.classList.remove(
+                        "show"
+                    );
+
+                },
+                900
+            );
+
+        }
+
+
+
+        /* =========================================
+           TEDDY CLICK
+        ========================================== */
+
+        teddy.addEventListener(
+            "click",
+            function () {
+
+
+                /* Prevent extra clicks
+                   after completing game */
+
+                if (gameFinished) {
+
+                    return;
+
+                }
+
+
+                /* Increase catch count */
+
+                catches++;
+
+
+                catchCount.textContent =
+                    catches;
+
+
+
+                /* Jump animation */
+
+                teddy.classList.remove(
+                    "jump"
+                );
+
+
+                void teddy.offsetWidth;
+
+
+                teddy.classList.add(
+                    "jump"
+                );
+
+
+
+                /* =================================
+                   CATCHES 1 - 7
+                ================================= */
+
+                if (
+                    catches <
+                    REQUIRED_CATCHES
+                ) {
+
+
+                    showMessage(
+                        messages[
+                            catches - 1
+                        ]
+                    );
+
+
+                    /*
+                     * Move teddy after
+                     * every catch
+                     */
+
+                    setTimeout(
+                        function () {
+
+                            moveTeddy();
+
+                        },
+                        250
+                    );
+
+
+                    /*
+                     * Different message
+                     * for last attempt
+                     */
+
+                    if (
+                        catches === 7
+                    ) {
+
+                        catchMessage.textContent =
+                            "One final catch, Papa... 🧸❤️";
+
+                    }
+
+                }
+
+
+
+                /* =================================
+                   8TH CATCH
+                ================================= */
+
+                if (
+                    catches ===
+                    REQUIRED_CATCHES
+                ) {
+
+
+                    gameFinished =
+                        true;
+
+
+                    /* Update message */
+
+                    catchMessage.textContent =
+                        "You caught me, Papa! ❤️";
+
+
+                    /* Change teddy */
+
+                    teddy.textContent =
+                        "🎁";
+
+
+                    /* Final message */
+
+                    showMessage(
+                        "Your real surprise is waiting... ✨"
+                    );
+
+
+                    /*
+                     * Save music position
+                     */
+
+                    sessionStorage.setItem(
+                        "birthdayMusicTime",
+                        music.currentTime
+                    );
+
+
+                    /*
+                     * Stop teddy movement
+                     */
+
+                    teddy.style.pointerEvents =
+                        "none";
+
+
+                    /*
+                     * Open birthday page
+                     * after short delay
+                     */
+
+                    setTimeout(
+                        function () {
+
+
+                            document.body.classList.add(
+                                "pageOut"
+                            );
+
+
+                            setTimeout(
+                                function () {
+
+
+                                    window.location.href =
+                                        "birthday.html";
+
+
+                                },
+                                700
+                            );
+
+
+                        },
+                        1300
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           RESIZE
+        ========================================== */
+
+        window.addEventListener(
+            "resize",
+            moveTeddy
+        );
+
+
+
+        /* =========================================
+           START GAME
+        ========================================== */
+
+        moveTeddy();
+
+
+    </script>
+
+
+</body>
+
+</html>
